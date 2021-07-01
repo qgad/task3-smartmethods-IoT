@@ -14,4 +14,6 @@
 * task3 files :
 - task guide
 - JSON skill file 
+- README.md
+- .gitattributes
 
