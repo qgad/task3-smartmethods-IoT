@@ -1,0 +1,432 @@
+{
+  "intents": [
+    {
+      "intent": "الشركة",
+      "examples": [
+        {
+          "text": "3"
+        },
+        {
+          "text": "٣"
+        },
+        {
+          "text": "٣3"
+        },
+        {
+          "text": "٣٣3"
+        },
+        {
+          "text": "٣٣٣3"
+        },
+        {
+          "text": "٣٣٣٣3"
+        },
+        {
+          "text": "تلات"
+        },
+        {
+          "text": "تلاتة"
+        },
+        {
+          "text": "تلاته"
+        },
+        {
+          "text": "ثلاث"
+        },
+        {
+          "text": "ثلاثة"
+        },
+        {
+          "text": "ثلاثه"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "ترحيب",
+      "examples": [
+        {
+          "text": "."
+        },
+        {
+          "text": "السلام عليكم"
+        },
+        {
+          "text": "الو"
+        },
+        {
+          "text": "اهلين"
+        },
+        {
+          "text": "سلام"
+        },
+        {
+          "text": "هاي"
+        },
+        {
+          "text": "هلا"
+        },
+        {
+          "text": "هيلو"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "تعريف",
+      "examples": [
+        {
+          "text": "1"
+        },
+        {
+          "text": "١"
+        },
+        {
+          "text": "١1"
+        },
+        {
+          "text": "١١1"
+        },
+        {
+          "text": "١١١1"
+        },
+        {
+          "text": "واحد"
+        },
+        {
+          "text": "ون"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "خدمات",
+      "examples": [
+        {
+          "text": "خ"
+        },
+        {
+          "text": "خادمات"
+        },
+        {
+          "text": "خدم"
+        },
+        {
+          "text": "خدمات"
+        },
+        {
+          "text": "خدمة"
+        },
+        {
+          "text": "خدمه"
+        },
+        {
+          "text": "خيدمات"
+        },
+        {
+          "text": "دمات"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "عملها",
+      "examples": [
+        {
+          "text": "2"
+        },
+        {
+          "text": "٢"
+        },
+        {
+          "text": "٢2"
+        },
+        {
+          "text": "٢٢2"
+        },
+        {
+          "text": "٢٢٢2"
+        },
+        {
+          "text": "٢٢٢٢2"
+        },
+        {
+          "text": "اتنين"
+        },
+        {
+          "text": "اثنان"
+        },
+        {
+          "text": "اثني"
+        },
+        {
+          "text": "اثنين"
+        },
+        {
+          "text": "تو"
+        },
+        {
+          "text": "ثنين"
+        }
+      ],
+      "description": ""
+    }
+  ],
+  "entities": [],
+  "metadata": {
+    "api_version": {
+      "major_version": "v2",
+      "minor_version": "2018-11-08"
+    }
+  },
+  "dialog_nodes": [
+    {
+      "type": "standard",
+      "title": "ترحيب",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": " ياهلا , لعرض سلسلة الخدمات ارسل خدمات "
+              },
+              {
+                "text": "تفضل  , لعرض سلسلة الخدمات ارسل خدمات"
+              },
+              {
+                "text": "ارحب  , لعرض سلسلة الخدمات ارسل خدمات"
+              },
+              {
+                "text": "هلابك  , لعرض سلسلة الخدمات ارسل خدمات"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "random"
+          }
+        ]
+      },
+      "conditions": "#ترحيب",
+      "dialog_node": "node_2_1625171754383",
+      "previous_sibling": "node_3_1625178395962"
+    },
+    {
+      "type": "standard",
+      "title": "خدمات",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "يا هلا، سلسلة الخدمات: (ارسل الرقم المناسب)"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          },
+          {
+            "values": [
+              {
+                "text": "1- تعريف بالواجهة "
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          },
+          {
+            "values": [
+              {
+                "text": "2- كيف تعمل الواجهة"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          },
+          {
+            "values": [
+              {
+                "text": "3- عن الشركة"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#خدمات",
+      "dialog_node": "node_3_1625178395962",
+      "previous_sibling": "node_7_1625179564307"
+    },
+    {
+      "type": "standard",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "هذي الواجهة تتحكم في اتجاهات الروبوت , اضغط الاتجاه الي يناسبك ويجيك الرد (:"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#تعريف",
+      "dialog_node": "node_3_1625179223700",
+      "previous_sibling": "مرحبا"
+    },
+    {
+      "type": "standard",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": " بمجرد ضغطك على الاتجاه المناسب راح ينرسل ويتسجل في قاعدة البيانات بعدها نقدر نسترجع ضغطة ضغطة وننفذها, طاب مسائك "
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#عملها",
+      "dialog_node": "node_5_1625179278338",
+      "previous_sibling": "node_3_1625179223700"
+    },
+    {
+      "type": "standard",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "مؤسسة تجارية وطنية تأسست عام 2010 م مسجلة لدى وزارة التجارة ومتخصصة في المعدات الآلية والروبوت والذكاء الصناعي وتعتبر المنشأة التجارية الأولى من نوعها في خدمة الباحثين والمبتكرين في العالم العربي ومصنفة لدى مجلة فوربس العالمية كأحد أكثر الشركات ابداعا في المملكة العربية السعودية في أخر تصنيف عام 2015."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          },
+          {
+            "values": [
+              {
+                "text": "الرؤيا\nأن نكون الممثل الأول في المملكة العربية السعودية لصناعة الروبوتات والذكاء الصناعي و أنظمة التحكم و الأتمتة"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          },
+          {
+            "values": [
+              {
+                "text": "الرسالة\nرسالتنا أن نحول جيل التقنية من مستخدمين إلى منتجين ومطورين ."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#الشركة",
+      "dialog_node": "node_7_1625179564307",
+      "previous_sibling": "node_5_1625179278338"
+    },
+    {
+      "type": "standard",
+      "title": "اي سواليف ثانية",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "العذر والسموحة مافهمت عليك , ارسل خدمات لعرض السلسة"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "anything_else",
+      "dialog_node": "أي شيء آخر",
+      "previous_sibling": "node_2_1625171754383",
+      "disambiguation_opt_out": true
+    },
+    {
+      "type": "standard",
+      "title": "المقدمة",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "يا هلا، سلسلة الخدمات: (ارسل الرقم المناسب)"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          },
+          {
+            "values": [],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          },
+          {
+            "values": [
+              {
+                "text": "1- تعريف بالواجهة "
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          },
+          {
+            "values": [
+              {
+                "text": "2- كيف تعمل الواجهة"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          },
+          {
+            "values": [
+              {
+                "text": "3- عن الشركة"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "welcome",
+      "dialog_node": "مرحبا"
+    }
+  ],
+  "counterexamples": [
+    {
+      "text": "ب"
+    },
+    {
+      "text": "عندكم حبحب؟"
+    }
+  ],
+  "system_settings": {
+    "disambiguation": {
+      "prompt": ":هل قصدت",
+      "enabled": true,
+      "randomize": true,
+      "max_suggestions": 5,
+      "suggestion_text_policy": "title",
+      "none_of_the_above_prompt": "كل ما سبق خطأ"
+    },
+    "human_agent_assist": {
+      "prompt": ":هل قصدت"
+    }
+  },
+  "learning_opt_out": false,
+  "name": "تحدث",
+  "language": "ar",
+  "description": ""
+}
