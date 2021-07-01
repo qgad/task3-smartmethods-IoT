@@ -1,0 +1,42 @@
+h1{
+    text-align:center; 
+    color: darkgray;
+}
+*{
+  margin: 0;
+  padding: 0;
+}
+
+
+body{
+
+  background: #A9A9A9;
+  font-family: Monospace;
+background-image: url('robot.jpg');
+}
+
+.main{
+  width: 60%;
+  margin: 60px auto;
+  position: relative;
+}
+
+#button{
+  padding: 30px 40px;
+  font-family: Monospace;
+  font-size: 20px;
+  cursor: pointer;
+  border-radius: 12px;
+  background-color: #e7e7e7; 
+  border: none;
+  color: black;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+ transition-duration: 0.4s;
+  
+}
+#button:hover {
+  background-color: #4CAF50;
+  color: white;
+}
